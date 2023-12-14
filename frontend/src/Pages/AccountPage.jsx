@@ -91,7 +91,7 @@ const AccountPage = () => {
       },
     ];
   
-    // const token = localStorage.getItem("lamatoken") || "";
+    const token = localStorage.getItem("lamatoken") || "";
     const {
       allProjects,
       setAllProjects,
@@ -101,7 +101,7 @@ const AccountPage = () => {
       setEpisodes,
     } = useContext(DataContext);
 
-const {user,setUser,token,setToken}=useContext(AuthContext)
+const {user,setUser}=useContext(AuthContext)
     const { isOpen, onOpen, onClose } = useDisclosure();
   
     const cancelRef = React.useRef();

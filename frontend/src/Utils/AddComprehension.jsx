@@ -18,7 +18,7 @@ import {
   } from '@chakra-ui/react'
   import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
   
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
   import { Button, ButtonGroup } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react';
   import {useParams} from "react-router-dom"
@@ -26,11 +26,15 @@ import React, { useContext, useState } from "react"
   import axios from "axios";
   const BASE_URL = "https://mock61st.onrender.com/api/v1";
   
-  // const token = localStorage.getItem("formatoken") || "";
+  const token = localStorage.getItem("formatoken") || "";
 export default function AddComprehension() {
   //   const { isOpen, onOpen, onClose } = useDisclosure();
 
-
+const [token,setToken]=useState("")
+useEffect(()=>{
+  const formatoken = localStorage.getItem("formatoken") || "";
+  setToken((pre)=>formatoken)
+},[])
   //   const cancelRef = React.useRef()
   // const [projectName, setProjectName] = useState('');
 
@@ -39,7 +43,7 @@ export default function AddComprehension() {
   //   onClose();
   // };
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {user,setUser,token,setToken}=useContext(AuthContext)
+
   const cancelRef = React.useRef();
   const [title, setTitle] = useState("");
   const [op1, setOp1] = useState("");

@@ -15,12 +15,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Textarea } from "@chakra-ui/react";
 import { DataContext } from "../Context/DataContextProvider";
-import { AuthContext } from "../Context/AuthContextProvider";
 const BASE_URL = "https://mock61st.onrender.com//api/v1";
-// const token = localStorage.getItem("formatoken") || "";
+const token = localStorage.getItem("formatoken") || "";
 
 const Form = () => {
-  const {user,setUser,token,setToken}=useContext(AuthContext)
+
 
   const { id } = useParams();
   const { allforms, setAllforms, form, setform,formName, setformName, questions, setquestions } =useContext(DataContext);

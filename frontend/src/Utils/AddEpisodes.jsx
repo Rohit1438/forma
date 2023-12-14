@@ -14,12 +14,17 @@ import {
     Input,
     FormHelperText,
   } from '@chakra-ui/react'
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
   import { Button, ButtonGroup } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react';
 export default function AddEpisode() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const {user,setUser,token,setToken}=useContext(AuthContext)
+
+    const [token,setToken]=useState("")
+    useEffect(()=>{
+      const formatoken = localStorage.getItem("formatoken") || "";
+      setToken((pre)=>formatoken)
+    },[])
     const cancelRef = React.useRef()
   const [projectName, setProjectName] = useState('');
 

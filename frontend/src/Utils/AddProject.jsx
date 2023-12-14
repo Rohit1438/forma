@@ -15,7 +15,7 @@ import {
     FormHelperText,
   } from '@chakra-ui/react'
   import {useNavigate} from "react-router-dom"
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
   import { Button, ButtonGroup } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react';
   import axios  from 'axios'
@@ -27,11 +27,17 @@ export default function AlertDialogExample() {
     const [user,setUser]=useState({})
     const cancelRef = React.useRef()
   const [FormName, setFormName] = useState('');
+  const [token,setToken]=useState("")
 const navigate=useNavigate()
 //https://mock61st.onrender.com/api/v1/forms/questions
   const BASE_URL="https://mock61st.onrender.com/api/v1"
-  // const token = localStorage.getItem("formatoken") || "";
-  const {token,setToken}=useContext(AuthContext)
+
+
+  useEffect(()=>{
+    const formatoken = localStorage.getItem("formatoken") || "";
+    setToken((pre)=>formatoken)
+  },[])
+
   const fetchForms = async (token) => {
     try {
       console.log("fetching")

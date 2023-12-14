@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { Checkbox, CheckboxGroup } from "@chakra-ui/react";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
@@ -25,9 +25,8 @@ import {useParams} from "react-router-dom"
 import axios from "axios";
 import { DataContext } from "../Context/DataContextProvider";
 const BASE_URL = "https://mock61st.onrender.com/api/v1";
-// const token = localStorage.getItem("formatoken") || "";
+
 export default function AddMcqExample() {
-  const {user,setUser,token,setToken}=useContext(AuthContext)
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { allforms, setAllforms, form, setform,formName, setformName, questions, setquestions } =useContext(DataContext);
   const cancelRef = React.useRef();
@@ -36,6 +35,12 @@ export default function AddMcqExample() {
   const [op2, setOp2] = useState("");
   const [op3, setOp3] = useState("");
   const [op4, setOp4] = useState("");
+  
+const [token,setToken]=useState("")
+useEffect(()=>{
+  const formatoken = localStorage.getItem("formatoken") || "";
+  setToken((pre)=>formatoken)
+},[])
   const [formData, setFormData] = useState({});
 const {id}=useParams()
   const handleCreate = async () => {
