@@ -6,9 +6,9 @@ import { AuthContext } from "../Context/AuthContextProvider";
 export const PrivateRoute = ({ children }) => {
   const { isAuth } = useContext(AuthContext);
 
+  const {user,setUser,token,setToken}=useContext(AuthContext)
 
-
-  const token = localStorage.getItem("formatoken") || "";
+  // const token = localStorage.getItem("formatoken") || "";
   //     const authentication=()=>{
   //         if(token){
   //            setIsAuth(true)

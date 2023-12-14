@@ -30,8 +30,8 @@ export default function AlertDialogExample() {
 const navigate=useNavigate()
 //https://mock61st.onrender.com/api/v1/forms/questions
   const BASE_URL="https://mock61st.onrender.com/api/v1"
-  const token = localStorage.getItem("formatoken") || "";
-
+  // const token = localStorage.getItem("formatoken") || "";
+  const {token,setToken}=useContext(AuthContext)
   const fetchForms = async (token) => {
     try {
       console.log("fetching")

@@ -8,7 +8,7 @@ export const AuthContext=createContext()
 const AuthContextProvider = ({children}) => {
 
 
-
+const [token,setToken]=useState("")
 
 const[isAuth,setIsAuth]=useState(false)
 const [user,setUser]=useState({})
@@ -20,7 +20,7 @@ const [loader,setLoader]=useState(false)
 
 
 const BASE_URL="https://mock61st.onrender.com/api/v1/"
-const token= localStorage.getItem("formatoken")||""
+
 let userdata=JSON.parse(localStorage.getItem("formauser"))||""
 
 const {allForms,setAllForms,Form,setForm,questions,setquestions}=useContext(DataContext)
@@ -76,10 +76,12 @@ const authentication = async () => {
 
 
 useEffect(()=>{
+  const formatoken= localStorage.getItem("formatoken")||""
+  setToken((pre)=>formatoken)
 authentication()
 },[token])
 
-  return <AuthContext.Provider value={{id,loader,setLoader,setLoader,setId,isAuth,setIsAuth,user,setUser}}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{id,loader,token,setToken,setLoader,setLoader,setId,isAuth,setIsAuth,user,setUser}}>{children}</AuthContext.Provider>
 }
 
 export default AuthContextProvider

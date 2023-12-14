@@ -23,9 +23,10 @@ import React, { useContext, useState } from "react"
 import axios from "axios";
 import { DataContext } from '../Context/DataContextProvider'
 const BASE_URL = "https://mock61st.onrender.com/api/v1";
-const token = localStorage.getItem("formatoken") || "";
+// const token = localStorage.getItem("formatoken") || "";
 export default function AddFillin() {
   const { allforms, setAllforms, form, setform,formName, setformName, questions, setquestions } =useContext(DataContext);
+  const {user,setUser,token,setToken}=useContext(AuthContext)
   //   const { isOpen, onOpen, onClose } = useDisclosure();
 
 

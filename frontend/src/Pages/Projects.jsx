@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import AlertDialogExample from '../Utils/AddProject'
 import { DataContext } from '../Context/DataContextProvider'
 import Navbar from '../Components/Navbar'
+import { AuthContext } from '../Context/AuthContextProvider'
 
 
 const Projects = () => {
     const [open, setOpen] =useState(false);
     const forms=[1,2,3,4,5,6,7,8,9]
     const {allforms,setAllForms,form,setform,episodes,setEpisodes}=useContext(DataContext)
+    const {user,setUser,token,setToken}=useContext(AuthContext)
     const [short,setShort]=useState("")
     console.log(allforms)
     const colors = ['#7E22CE', '#F8A01D', '#6366F1', '#F8A01D', '#6366F1','#6366F1','#7E22CE', '#F8A01D', ]; // Purple, Yellow, Green

@@ -6,14 +6,16 @@ import AlertDialogExample from '../Utils/AddProject'
 import axios  from 'axios'
 import Navbar from '../Components/Navbar'
 import { DataContext } from '../Context/DataContextProvider'
+import { AuthContext } from '../Context/AuthContextProvider'
 
 
 const Homepage = () => {
     const [open, setOpen] = React.useState(false);
     const {allProjects,setAllProjects,project,setProject,episodes,setEpisodes}=useContext(DataContext)
+    const {user,setUser,token,setToken}=useContext(AuthContext)
 const [projectName,setProjectName]=useState("")
 const BASE_URL="https://mock61st.onrender.com/api/v1"
-const token = localStorage.getItem("lamatoken") || "";
+// const token = localStorage.getItem("lamatoken") || "";
 // const createProject=async()=>{
 // try{
 // let res=axios.post(`${BASE_URL}/addprojects`,

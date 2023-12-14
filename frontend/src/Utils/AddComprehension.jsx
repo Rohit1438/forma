@@ -26,7 +26,7 @@ import React, { useContext, useState } from "react"
   import axios from "axios";
   const BASE_URL = "https://mock61st.onrender.com/api/v1";
   
-  const token = localStorage.getItem("formatoken") || "";
+  // const token = localStorage.getItem("formatoken") || "";
 export default function AddComprehension() {
   //   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -39,7 +39,7 @@ export default function AddComprehension() {
   //   onClose();
   // };
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const {user,setUser,token,setToken}=useContext(AuthContext)
   const cancelRef = React.useRef();
   const [title, setTitle] = useState("");
   const [op1, setOp1] = useState("");

@@ -19,7 +19,7 @@ import React, { useState } from "react"
   import { useDisclosure } from '@chakra-ui/react';
 export default function AddEpisode() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const {user,setUser,token,setToken}=useContext(AuthContext)
     const cancelRef = React.useRef()
   const [projectName, setProjectName] = useState('');
 

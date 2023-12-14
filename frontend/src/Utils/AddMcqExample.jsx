@@ -25,8 +25,9 @@ import {useParams} from "react-router-dom"
 import axios from "axios";
 import { DataContext } from "../Context/DataContextProvider";
 const BASE_URL = "https://mock61st.onrender.com/api/v1";
-const token = localStorage.getItem("formatoken") || "";
+// const token = localStorage.getItem("formatoken") || "";
 export default function AddMcqExample() {
+  const {user,setUser,token,setToken}=useContext(AuthContext)
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { allforms, setAllforms, form, setform,formName, setformName, questions, setquestions } =useContext(DataContext);
   const cancelRef = React.useRef();

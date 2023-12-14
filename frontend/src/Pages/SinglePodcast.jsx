@@ -64,6 +64,7 @@ const SinglePodcast = () => {
   const [questionDesc, setquestionDesc] = useState("");
   const [updateId, setUpdateId] = useState("");
   const { id } = useParams();
+
   const data = [
     { name: "sample1", timne: 1 / 20 / 33, status: "Done" },
     { name: "sample1", timne: 1 / 20 / 33, status: "Done" },
@@ -89,14 +90,14 @@ const SinglePodcast = () => {
     },
   ];
 
-  const token = localStorage.getItem("formatoken") || "";
+  // const token = localStorage.getItem("formatoken") || "";
   const { allforms, setAllforms, form, setform,formName, setformName, questions, setquestions } =useContext(DataContext);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const cancelRef = React.useRef();
  
-  const { user, setUser } = useContext(AuthContext);
+  const {user,setUser,token,setToken}=useContext(AuthContext)
 
   const handleCreate = () => {
     onClose();
