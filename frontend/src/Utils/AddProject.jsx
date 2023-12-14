@@ -39,8 +39,8 @@ const navigate=useNavigate()
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(res)
-      res=await res.data.Forms
-  
+      res=await res.data.forms
+console.log(res,"formdata")  
       await  setAllForms((pre)=>[...res])
 
     } catch (error) {
@@ -58,12 +58,12 @@ const navigate=useNavigate()
   )
   res=await res.data
 
-  console.log(res)
+  // console.log(res)
   // await  setAllForms((pre)=>[...res.Forms])
 
   fetchForms(token)
   onClose();
-  navigate("/Forms");
+  navigate("/projects");
   }catch(err){
       console.log(err);
   }

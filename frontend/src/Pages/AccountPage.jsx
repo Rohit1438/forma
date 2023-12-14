@@ -143,18 +143,7 @@ console.log(user,"settings")
             <p>Podcast Upload Flow</p>
             <div className="links">
             <NavLink to={"/projects"} style={{...activeLinkStyle,backgroundColor:"#7e22ce",color:"white"}}>Projects</NavLink>
-              {links.map((el) => {
-                return (
-                  <NavLink
-                    to={el.to}
-                    style={({ isActive }) => {
-                      return isActive ? activeLinkStyle : defaultLinkStyle;
-                    }}
-                  >
-                    {el.label}
-                  </NavLink>
-                );
-              })}
+           
             </div>
           </div>
           <div style={{borderTop:"1px solid grey",padding:"15px 10px 10px 15px",fontSize:"20px"}}>

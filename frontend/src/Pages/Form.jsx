@@ -179,6 +179,7 @@ const Div = styled.div`
   align-items: center;
   padding-top: 20px;
   background-color: #ab4cffd9;
+  min-height: 100vh;
   .question{
     margin: 20px 0px 20px;
     background-color: #faf4ffed;
@@ -186,7 +187,7 @@ const Div = styled.div`
     border-radius: 10px;
   }
   .form {
-    margin: auto;
+   
     border: 1px solid red;
     background-color: white;
     box-sizing: border-box;
@@ -201,4 +202,5 @@ const Div = styled.div`
     /* height: 100vh; */
     position: sticky;
   }
+  
 `;

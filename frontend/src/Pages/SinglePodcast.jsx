@@ -216,11 +216,12 @@ const SinglePodcast = () => {
           </Link>
           <p>Form Structure Flow</p>
           <div className="links">
+          <NavLink to={"/projects"} style={{...activeLinkStyle,backgroundColor:"#7e22ce",color:"white",margin:"10px 0px 10px"}}>Projects</NavLink>
             <NavLink
               to={"/forms"}
               style={{
                 ...activeLinkStyle,
-                backgroundColor: "#7e22ce",
+                backgroundColor: "#b873f5",
                 color: "white",
               }}
             >
