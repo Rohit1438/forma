@@ -37,7 +37,7 @@ import { AuthContext } from "../Context/AuthContextProvider";
 import AddMcqExample from "../Utils/AddMcqExample";
 import AddFillin from "../Utils/AddFillIn";
 import AddComprehension from "../Utils/AddComprehension";
-const BASE_URL = "http://localhost:8080/api/v1";
+const BASE_URL = "https://mock61st.onrender.com/api/v1";
 const defaultLinkStyle = {
   textDecoration: "none",
   color: "#49454F",

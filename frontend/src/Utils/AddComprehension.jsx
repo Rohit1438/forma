@@ -24,7 +24,7 @@ import React, { useContext, useState } from "react"
   import {useParams} from "react-router-dom"
   import { DataContext } from "../Context/DataContextProvider";
   import axios from "axios";
-  const BASE_URL = "http://localhost:8080/api/v1";
+  const BASE_URL = "https://mock61st.onrender.com/api/v1";
   
   const token = localStorage.getItem("formatoken") || "";
 export default function AddComprehension() {

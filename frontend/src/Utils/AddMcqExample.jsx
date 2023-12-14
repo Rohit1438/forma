@@ -24,7 +24,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import {useParams} from "react-router-dom"
 import axios from "axios";
 import { DataContext } from "../Context/DataContextProvider";
-const BASE_URL = "http://localhost:8080/api/v1";
+const BASE_URL = "https://mock61st.onrender.com/api/v1";
 const token = localStorage.getItem("formatoken") || "";
 export default function AddMcqExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();

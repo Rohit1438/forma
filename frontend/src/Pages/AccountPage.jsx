@@ -35,7 +35,7 @@ import {
 import image from "../Images/profileimage.png"
 import { useDisclosure } from "@chakra-ui/react";
 import { AuthContext } from "../Context/AuthContextProvider";
-const BASE_URL="https://zuraventures1.onrender.com/api/v1"
+const BASE_URL="https://mock61st.onrender.com/api/v1"
 const defaultLinkStyle = {
   textDecoration: "none",
   color: "#49454F",

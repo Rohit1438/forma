@@ -12,7 +12,7 @@ const Homepage = () => {
     const [open, setOpen] = React.useState(false);
     const {allProjects,setAllProjects,project,setProject,episodes,setEpisodes}=useContext(DataContext)
 const [projectName,setProjectName]=useState("")
-const BASE_URL="https://zuraventures1.onrender.com/api/v1"
+const BASE_URL="https://mock61st.onrender.com/api/v1"
 const token = localStorage.getItem("lamatoken") || "";
 // const createProject=async()=>{
 // try{

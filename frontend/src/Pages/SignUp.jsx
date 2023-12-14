@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { CircularProgress, useToast } from "@chakra-ui/react";
-const BASE_URL="https://zuraventures1.onrender.com/api/v1"
+const BASE_URL="https://mock61st.onrender.com/api/v1"
 const SignUp = () => {
   // const location = useLocation();
 
